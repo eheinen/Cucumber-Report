@@ -1,6 +1,12 @@
 # Cucumber Report
 A pretty beautiful report to cucumber
 
+### Screenshots
+
+![alt tag](https://github.com/eheinen/cucumber-report/blob/master/screenshots/screen01.png)
+![alt tag](https://github.com/eheinen/cucumber-report/blob/master/screenshots/screen02.png)
+![alt tag](https://github.com/eheinen/cucumber-report/blob/master/screenshots/screen03.png)
+
 ### How to use
 First of all, choose a directory for your report inside your machine and clone this project to there.
 In the next step, setup your report output on your cucumber. For example:

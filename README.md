@@ -3,7 +3,7 @@ A pretty beautiful report to cucumber
 
 **If you have any doubt or trouble, please ping me eduardogheinen@gmail.com**
 
-### How to use
+## How to use
 First of all, choose a directory for your report inside your machine and clone this project to there.
 In the next step, setup your report output on your cucumber. For example:
 
@@ -21,7 +21,7 @@ Be careful! You need to generate the report inside the directory **/report/**
 
 Now just click twice on **report.html** inside the project. And have some fun!
 
-### Screenshots
+## Screenshots
 
 ![alt tag](https://github.com/eheinen/cucumber-report/blob/master/screenshots/screen01.png)
 ![alt tag](https://github.com/eheinen/cucumber-report/blob/master/screenshots/screen02.png)

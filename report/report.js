@@ -58,7 +58,7 @@ formatter.match({
   "location": "LoginSteps.i_am_on_LoginPage()"
 });
 formatter.result({
-  "duration": 1388527815,
+  "duration": 1392255328,
   "status": "passed"
 });
 formatter.match({
@@ -71,7 +71,7 @@ formatter.match({
   "location": "LoginSteps.i_type_in_username_field(String)"
 });
 formatter.result({
-  "duration": 64740411,
+  "duration": 61498623,
   "status": "passed"
 });
 formatter.match({
@@ -84,29 +84,30 @@ formatter.match({
   "location": "LoginSteps.i_type_in_password_field(String)"
 });
 formatter.result({
-  "duration": 67666771,
+  "duration": 67401946,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_click_on_submit_button()"
 });
 formatter.result({
-  "duration": 79338522,
+  "duration": 74696983,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_should_be_able_to_see_a_message()"
 });
 formatter.result({
-  "duration": 1247011717,
+  "duration": 1274523718,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_should_be_able_to_be_redirected_to_IndexPage()"
 });
 formatter.result({
-  "duration": 1856637239,
-  "status": "passed"
+  "duration": 1829983722,
+  "error_message": "java.lang.AssertionError: \nExpected: \"ABFF\"\n     but: was \"ABFF1\"\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)\n\tat org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:8)\n\tat com.abff.features.steps.LoginSteps.i_should_be_able_to_be_redirected_to_IndexPage(LoginSteps.java:48)\n\tat ✽.And I should be able to be redirected to IndexPage(login.feature:13)\n",
+  "status": "failed"
 });
 formatter.scenario({
   "line": 16,
@@ -145,21 +146,66 @@ formatter.match({
   "location": "LoginSteps.i_am_on_LoginPage()"
 });
 formatter.result({
-  "duration": 33383256,
+  "duration": 36591532,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_authenticate_on_LoginPage()"
 });
 formatter.result({
-  "duration": 3251333212,
-  "status": "passed"
+  "duration": 855887,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat com.abff.features.steps.LoginSteps.i_authenticate_on_LoginPage(LoginSteps.java:38)\n\tat ✽.When I authenticate on LoginPage(login.feature:18)\n",
+  "status": "pending"
 });
 formatter.match({
   "location": "LoginSteps.i_should_be_able_to_be_redirected_to_IndexPage()"
 });
 formatter.result({
-  "duration": 1087935900,
-  "status": "passed"
+  "status": "skipped"
+});
+formatter.scenario({
+  "line": 22,
+  "name": "Authentication PageObject",
+  "description": "",
+  "id": "login;authentication-pageobject",
+  "type": "scenario",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "line": 21,
+      "name": "@login"
+    },
+    {
+      "line": 21,
+      "name": "@object"
+    }
+  ]
+});
+formatter.step({
+  "line": 23,
+  "name": "I am on LoginPage2",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 24,
+  "name": "I authenticate on LoginPage2",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 25,
+  "name": "I should be able to be redirected to IndexPage2",
+  "keyword": "Then "
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
 });
 });

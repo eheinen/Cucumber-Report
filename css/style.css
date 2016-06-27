@@ -1,0 +1,224 @@
+html{ width: 100%; margin: 0px; }
+body{ width: 100%; margin-left: 0px; background-color: #333; font-family: sans-serif;}
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+::selection {
+  background: #EEE; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #EEE; /* Gecko Browsers */
+}
+
+.cucumber-report .body {
+  font-family: Helvetica,Arial,sans-serif;
+}
+
+.cucumber-report .keyword {
+  font-weight: bold;
+}
+
+.cucumber-report .description {
+  font-style: italic;
+  margin-left: 20px;
+}
+
+.cucumber-report details > section {
+  margin-left: 20px;
+}
+
+.cucumber-report ol.steps {
+  list-style-type: none;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.cucumber-report ol.steps li{padding: 5px;}
+
+.cucumber-report .step .embedded-text {
+  background: #dddddd;
+}
+
+.cucumber-report .doc_string {
+  margin: 0 0 0 20px;
+}
+
+.cucumber-report table {
+  border-collapse: collapse;
+  border: 1px;
+  border-style: solid;
+}
+
+.cucumber-report td, .cucumber-report th {
+  border: 1px;
+  border-style: solid;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.cucumber-report table {
+  margin-left: 20px;
+}
+
+.cucumber-report thead {
+  background-color: #BFBFBF;
+}
+
+.cucumber-report .passed {
+  background-color: #87D37C;
+}
+
+.cucumber-report .failed {
+  background-color: #F64747!important;
+}
+
+.cucumber-report .skipped {
+  background-color: #52B3D9;
+}
+
+.cucumber-report .undefined, .cucumber-report .pending {
+  background-color: #F9BF3B;
+}
+
+.cucumber-report .tags {
+  display: inline;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.cucumber-report .tag {
+  margin-right: 1.0em;
+  color: #999;
+}
+
+.scenario .tag{
+    font-size: 14px;
+    margin-left: -6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.cucumber-report .comments {
+  display: inline;
+}
+
+.cucumber-report .comment {
+  margin: 0;
+  padding: 0;
+}
+
+.cucumber-report .error {
+  margin: .2em .75em;
+  padding: .2em;
+  background-color: #96281B;
+  color: #FFF;
+  padding: 5px;
+}
+
+#cucumber-templates {
+  display: none;
+}
+
+.blockelement.feature
+{
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-bottom: 30px;
+}
+
+.container
+{
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.cucumber-report
+{
+    width: 100%;
+}
+
+.title{
+    font-size: 45px;
+    text-align: center;
+    color: #F9BF3B;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.data_table{background-color: #FFF; }
+
+.data_table td
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 22px;
+}
+
+.statistics{margin-left: 20px; margin-right: 20px;}
+
+.statistics .fields .field
+{
+    display: inline-block;
+    font-size: 18px!important;
+    margin-right: 10px;
+    color: #FFF;
+    text-align: center!important;
+}
+
+.steps img{margin-top: 10px; margin-bottom: 10px;}
+
+.statistics .fields .field input[type="text"]{ width: 150px; height: 25px; text-align: center; font-size: 18px; border: none; font-weight: bold}
+
+.statistics .fields .field .passed{background-color: #87D37C; color: #1E824C}
+.statistics .fields .field .failed{background-color: #E08283; color: #96281B}
+.statistics .fields .field #stepsSkipped{background-color: #89C4F4; color: #446CB3}
+.statistics .fields .field #stepsPending{background-color: #F5AB35; color: #D35400}
+
+.graph{font-size: 18px!important; color: #FFF; display: inline-block;}
+.graph .chart-area{margin-top: 10px!important; }
+.graph.firstGraph{margin-right: 50px!important; text-align: center!important}
+.graph.thirdGraph{margin-left: 50px!important;}
+
+.expandAndCollapseAll{cursor: pointer; font-size: 20px; color: #F5AB35; margin-left: 23px; width: 125px;}
+.expand-signal-feature{display: inline; cursor: pointer; margin-left: 20px;}
+.expand-signal-scenario{display: inline; cursor: pointer;}
+
+.information-feature
+{
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 10px;
+    vertical-align: middle;
+    height: 21px;
+}
+
+
+.information-feature .scenario-passed{color: #87D37C!important; background-color: transparent!important; display: inline-block;}
+.information-feature .scenario-failed, .step-failed{color: #E08283!important; background-color: transparent!important; display: inline-block;}
+.information-feature .scenario-skipped, .step-skipped{color: #89C4F4!important; background-color: transparent!important; display: inline-block;}
+.information-feature .scenario-pending, .step-pending{color: #F5AB35!important; background-color: transparent!important; display: inline-block;}
+.information-feature .step-passed{color: #87D37C!important; background-color: transparent!important; display: inline-block;}
+.information-feature .step-failed, .step-failed{color: #E08283!important; background-color: transparent!important; display: inline-block;}
+.information-feature .step-skipped, .step-skipped{color: #89C4F4!important; background-color: transparent!important; display: inline-block;}
+.information-feature .step-pending, .step-pending{color: #F5AB35!important; background-color: transparent!important; display: inline-block;}
+.information-feature .info-attr{color: #FFF!important; background-color: transparent!important;}
+
+.footer-created {
+  text-align: right;
+    margin-right: 20px;
+    font-size: 12px;
+    font-style: italic;
+    color: #DDD;
+    opacity: 0.5;
+}
+
+.footer-created a {
+  color: #DDD;
+  opacity: 0.5;
+}

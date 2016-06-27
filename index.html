@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cucumber Features</title>
+        <link href="css/style.css" rel="stylesheet">
+        <script src="scripts/jquery-1.8.2.min.js"></script>
+        <script src="scripts/properties.js"></script>
+		<script src="scripts/spin.min.js"></script>
+        <script src="scripts/formatter.js"></script>
+        <script id="reportJS"></script>
+        <script> $('#reportJS')[0].src = getReportPath() + "report.js"; </script>
+        <script src="scripts/reportInformations.js"></script>
+        <script src="scripts/chart.js"></script>
+        <script src="scripts/expandAndCollapse.js"></script>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+    </head>
+    <body>
+        <div class="title">
+            <span>Animal Best Friend Forever - Report</span>
+        </div>
+
+        <div class="statistics">
+            <div class="fields" align="center">
+                <div class="field"><span>Total Features</span><br /><input type="text" disabled="true" id="totalFeatures"></div>
+                <div class="field"><span>Total Scenarios</span><br /><input type="text" disabled="true" id="totalScenarios"></div>
+                <div class="field"><span>Total Steps</span><br /><input type="text" disabled="true" id="totalSteps"></div>
+                <br /><br />
+                <div class="field"><span>Features Passed</span><br /><input type="text" disabled="true" class="passed" id="featuresPassed"></div>
+                <div class="field"><span>Features Failed</span><br /><input type="text" disabled="true" class="failed" id="featuresFailed"></div>
+                <div class="field"><span>Scenarios Passed</span><br /><input type="text" disabled="true" class="passed" id="scenariosPassed"></div>
+                <div class="field"><span>Scenarios Failed</span><br /><input type="text" disabled="true" class="failed" id="scenariosFailed"></div>
+                <br /><br />
+                <div class="field"><span>Steps Passed</span><br /><input type="text" disabled="true" class="passed" id="stepsPassed"></div>
+                <div class="field"><span>Steps Failed</span><br /><input type="text" disabled="true" class="failed" id="stepsFailed"></div>
+                <div class="field"><span>Steps Skipped</span><br /><input type="text" disabled="true" id="stepsSkipped"></div>
+                <div class="field"><span>Steps Pending</span><br /><input type="text" disabled="true" id="stepsPending"></div>
+            </div>
+        </div>
+
+        <br />
+        <hr style="width: 80%"/>
+        <br />
+
+        <div id="canvas-holder" align="center">
+            <div class="graph firstGraph">
+                <span>Features Passed x Failed</span><br />
+                <canvas id="chart-area-first" class="chart-area" width="150" height="150"/>
+            </div>
+            <div class="graph secondGraph">
+                <span>Scenarios Passed x Failed</span><br />
+                <canvas id="chart-area-second" class="chart-area" width="150" height="150"/>
+            </div>
+            <div class="graph thirdGraph">
+                <span>Steps Status</span><br />
+                <canvas id="chart-area-third" class="chart-area" width="150" height="150"/>
+            </div>
+        </div>
+
+        <br />
+        <hr style="width: 80%"/>
+        <br />
+
+        <div class="expandAndCollapseAll" onclick="expandAll()">
+            <span>+ Expand All</span>
+        </div>
+
+        <br />
+		<div class="loading-spin"></div>
+        <div class="cucumber-report"></div>
+        <div class="footer-created">
+            <span>Created by <a href="https://github.com/eheinen/">Eduardo Heinen</a> - 2015</span>
+        </div>
+    </body>
+</html>
+
+<script>
+    $('window').ready(function() {
+		var opts = {
+			  lines: 13 // The number of lines to draw
+			, length: 28 // The length of each line
+			, width: 14 // The line thickness
+			, radius: 42 // The radius of the inner circle
+			, scale: 0.5 // Scales overall size of the spinner
+			, corners: 1 // Corner roundness (0..1)
+			, color: '#FFF' // #rgb or #rrggbb or array of colors
+			, opacity: 0.25 // Opacity of the lines
+			, rotate: 0 // The rotation offset
+			, direction: 1 // 1: clockwise, -1: counterclockwise
+			, speed: 1 // Rounds per second
+			, trail: 60 // Afterglow percentage
+			, fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
+			, zIndex: 2e9 // The z-index (defaults to 2000000000)
+			, className: 'spinner' // The CSS class to assign to the spinner
+			, top: '50%' // Top position relative to parent
+			, left: '50%' // Left position relative to parent
+			, shadow: false // Whether to render a shadow
+			, hwaccel: false // Whether to use hardware acceleration
+			, position: 'absolute' // Element positioning
+			}
+			var target = $('.loading-spin')[0];
+			var spinner = new Spinner(opts).spin(target);
+
+
+		setTimeout(function(){
+			$("span:contains('Feature')").parent()
+					.css("font-size", "30px").css("font-family", "sans-serif")
+					.css("text-align", "left").css("color", "#FFF");
+
+			$("span:contains('Feature')").parent().parent().children('div .description')
+					.css("font-size", "18px").css("font-family", "sans-serif")
+					.css("text-align", "left").css("color", "#FFF")
+					.css("margin-top", "10px").css("margin-bottom", "10px")
+					.css("margin-left", "35px");
+
+			$(".blockelement.scenario").css("margin-left", "35px");
+			$(".blockelement.background").css("margin-left", "35px");
+
+
+			// Resume of the results:
+			var titleFeature =  $(".blockelement.feature span:contains('Feature')").parent('.header').children('.name');
+			$("<div class='information-feature'>\n\
+                <div class='scenario-passed'><span class='info-attr'>Scenarios: [ </span><span class='info-scenario-passed'></span></div> / \n\
+                <div class='scenario-failed'><span class='info-scenario-failed'></span></div> / \n\
+                <div class='scenario-skipped'><span class='info-scenario-skipped'></span></div> / \n\
+                <div class='scenario-pending'><span class='info-scenario-pending'></span></div> ] - \n\
+                <div class='step-passed'><span class='info-attr'>Steps: [ </span><span class='info-step-passed'></span></div> / \n\
+                <div class='step-failed'><span class='info-step-failed'></span></div> / \n\
+                <div class='step-skipped'><span class='info-step-skipped'></span></div> / \n\
+                <div class='step-pending'><span class='info-step-pending'></span></div> ]\n\
+              </div>").insertAfter(titleFeature);
+
+
+			buildStatistics();
+
+			$(".blockelement.feature span:contains('Feature')").prepend('<div class="expand-signal-feature" onclick="expandFeature(this)"><span>+ </span></div>');
+
+
+
+			$(".blockelement.scenario span:contains('Scenario')").prepend('<div class="expand-signal-scenario" onclick="expandScenario(this)"><span>+ </span></div>');
+			$(".blockelement.background span:contains('Background')").prepend('<div class="expand-signal-scenario" onclick="expandScenario(this)"><span>+ </span></div>');
+
+			$("span:contains('Feature')").parent().parent('.container').children(":not('.header')").hide();
+
+			$('.tags').append("<br />");
+
+
+			spinner.stop();
+		}, 1000);
+	});
+</script>
